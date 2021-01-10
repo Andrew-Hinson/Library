@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>Library</h1>
         <p>Create your own Library</p>
     </div>
-    <div id="formContainer">
+    <div id="formContainer" class="container">
         <form id="bookForm" name="bookForm">
         <ul>
             <li>
@@ -27,15 +28,18 @@
             </li>
             <li>
                 <label for="readCheck">Read:</label>
-                <input type="radio" id="read" value="R" name="read">
+                <input type="radio" id="read" value="Read" name="read">
                 <label for="notReadCheck">Not Read:</label>
-                <input type="radio" id="notRead" value="NR" name="read">
+                <input type="radio" id="notRead" value="Not Read" name="read">
             </li>
             <li>
                 <button type="submit" id="submitBtn">Submit</button>
             </li>
         </ul>
         </form>
+    </div>
+    <div id="displayContainer" class="container">
+            
     </div>
     <script src="app.js"></script>
 </body>

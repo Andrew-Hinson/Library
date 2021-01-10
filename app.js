@@ -1,6 +1,7 @@
 const titleInput = document.querySelector('#titleInput')
 const titleSubmit = document.querySelector('#titleSubmit')
 const bookForm = document.querySelector('#bookForm')
+const displayLib = document.querySelector('#displayContainer')
 let myLibrary = []
 
 function Book (title, author, pages, read) {
@@ -25,9 +26,37 @@ function addBookToLibrary() {
     myLibrary.push(work)
 }
 
+function addElement() {
+    const lastIndex = myLibrary.length - 1;
+        myLibrary.map((book, i) => {
+        if(i === lastIndex){
+        let newDiv = document.createElement('div');
+        let newP = document.createElement('p');
+        let deleteBtn = document.createElement('button')
+        // deleteBtn.addEventListener('click', curDiv => 0.
+        newP.innerText = `${book.title} ${book.author} ${book.pages} ${book.read}`
+
+        deleteBtn.classList.add('delete');
+        deleteBtn.innerText = 'Delete';
+        
+        newDiv.classList.add(`${i}`)
+        displayLib.appendChild(newDiv);
+        newDiv.appendChild(newP);
+        newP.appendChild(deleteBtn);
+        } else {
+            console.log("ツ")
+        }
+    })
+}
 
 
+//click event grabs data
 bookForm.addEventListener('submit', e => {
     e.preventDefault();
     addBookToLibrary();
+    addElement();
+        bookForm.elements.title.value = '';
+        bookForm.elements.author.value = '';
+        bookForm.elements.pages.value = '';
+        bookForm.elements.read.value = '';
 })

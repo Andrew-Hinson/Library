@@ -13,7 +13,22 @@ function Book (title, author, pages, read) {
 };
 
 // const lotr = new Book('LOTR', 'JRRT', 1000, 'have not');
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+(function() {
+    var updateButton = document.getElementById('createBook');
+    var cancelButton = document.getElementById('cancel');
+    var dialog = document.getElementById('bookCreation');
+  
+    updateButton.addEventListener('click', function() {
+      dialog.showModal();
 
+    });
+    // Form cancel button closes the dialog box
+    cancelButton.addEventListener('click', function() {
+      dialog.close();
+    });
+  })();
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function addBookToLibrary() {
     //take user input and add to array
@@ -39,7 +54,7 @@ function addElement() {
         deleteBtn.classList.add('delete');
         deleteBtn.innerText = 'Delete';
         
-        newDiv.classList.add(`${i}`)
+        newDiv.classList.add('card')
         displayLib.appendChild(newDiv);
         newDiv.appendChild(newP);
         newP.appendChild(deleteBtn);

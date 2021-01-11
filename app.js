@@ -21,7 +21,6 @@ function Book (title, author, pages, read) {
   
     updateButton.addEventListener('click', function() {
       dialog.showModal();
-
     });
     // Form cancel button closes the dialog box
     cancelButton.addEventListener('click', function() {
@@ -29,6 +28,8 @@ function Book (title, author, pages, read) {
     });
   })();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 function addBookToLibrary() {
     //take user input and add to array
@@ -53,16 +54,34 @@ function addElement() {
 
         deleteBtn.classList.add('delete');
         deleteBtn.innerText = 'Delete';
-        
+        deleteBtn.value = 'delete';
+        deleteBtn.dataset.index = i;
+        //////////////////////////////
+        newDiv.dataset.index = i;
         newDiv.classList.add('card')
+        
         displayLib.appendChild(newDiv);
         newDiv.appendChild(newP);
         newP.appendChild(deleteBtn);
-        } else {
-            console.log("ツ")
+
+        
+
         }
     })
 }
+
+//delete whatever the dataset index is 5head
+displayLib.addEventListener('click', (e) => {
+  let card = document.querySelector('card');
+  let target = e.target
+  if(target.value == 'delete'){
+    let i = target.dataset.index;
+    let removeDiv = document.querySelector(`[data-index='${i}']`)
+    displayLib.removeChild(removeDiv)
+    }
+   else
+    console.log('it does not work')
+  })
 
 
 //click event grabs data

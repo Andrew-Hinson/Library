@@ -14,9 +14,9 @@ function Book (title, author, pages, read) {
 // const lotr = new Book('LOTR', 'JRRT', 1000, 'have not');
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 (function() {
-    var updateButton = document.getElementById('createBook');
-    var cancelButton = document.getElementById('cancel');
-    var dialog = document.getElementById('bookCreation');
+    let updateButton = document.getElementById('createBook');
+    let cancelButton = document.getElementById('cancel');
+    let dialog = document.getElementById('bookCreation');
   
     updateButton.addEventListener('click', function() {
       dialog.showModal();

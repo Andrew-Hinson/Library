@@ -3,13 +3,15 @@ const titleSubmit = document.querySelector('#titleSubmit')
 const bookForm = document.querySelector('#bookForm')
 const displayLib = document.querySelector('#displayContainer')
 let myLibrary = []
-function Book (title, author, pages, read) {
-    //constructor
+
+class Book { 
+  constructor(title, author, pages, read) {
     this.title = title
     this.author = author
     this.pages = pages
     this.read = read
-};
+  }
+}
 
 // const lotr = new Book('LOTR', 'JRRT', 1000, 'have not');
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,7 +42,6 @@ function addBookToLibrary() {
     )
     myLibrary.push(work)
 }
-
 
 
 function addElement() {

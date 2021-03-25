@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="basic top">
-        <div id="heading">
-            <h1>Library <i class="fas fa-university"></i></h1>
-            <p>Create your own Library</p>
-            <button id="createBook">Add Book</button>
-        </div>
+      <div id="heading">
+        <h1>Library <i class="fas fa-university"></i></h1>
+        <p>Create your own Library</p>
+        <button id="createBook">Add Book</button>
+      </div>
     </div>
     <dialog id="bookCreation" class="dialog">
-        <form id="bookForm" name="bookForm">
-            <ul>
-                <li>
-                    <label for="title">Title:</label>
-                    <input type="text" id="titleInput" name="title">
-                </li>
-                <li>
-                    <label for="author">Author:</label>
-                    <input type="text" id="authInput" name="author">
-                </li>
-                <li>
-                    <label for="title">Pages:</label>
-                    <input type="number" id="pagesInput" name="pages">
-                </li>
-                <li>
-                    <label for="readCheck">Read:</label>
-                    <input type="radio" id="read" value="0" name="read">
-                    <label for="notReadCheck">Not Read:</label>
-                    <input type="radio" id="notRead" value="1" name="read">
-                </li>
-                <li>
-                    
-                    <menu>
-                        <button id="cancel" type="reset">Cancel</button>
-                        <button type="submit">Confirm</button>
-                      </menu>
-                </li>
-            </ul>
-            </form>
+      <form id="bookForm" name="bookForm">
+        <ul>
+          <li>
+            <label for="title">Title:</label>
+            <input type="text" id="titleInput" name="title" required />
+          </li>
+          <li>
+            <label for="author">Author:</label>
+            <input type="text" id="authInput" name="author" required />
+          </li>
+          <li>
+            <label for="title">Pages:</label>
+            <input type="number" id="pagesInput" name="pages" required />
+          </li>
+          <li>
+            <label for="readCheck">Read:</label>
+            <input type="radio" id="read" value="0" name="read" />
+            <label for="notReadCheck">Not Read:</label>
+            <input type="radio" id="notRead" value="1" name="read" />
+          </li>
+          <li>
+            <menu>
+              <button id="cancel" type="reset">Cancel</button>
+              <button type="submit">Confirm</button>
+            </menu>
+          </li>
+        </ul>
+      </form>
     </dialog>
-    <div id="displayContainer" class="container cards">
-            
-    </div>
+    <div id="displayContainer" class="container cards"></div>
     <script src="app.js"></script>
-    
-</body>
+  </body>
 </html>
